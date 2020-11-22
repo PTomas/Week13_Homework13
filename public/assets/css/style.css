@@ -1,0 +1,41 @@
+body{
+  background-color: lightyellow;
+}
+
+h1{
+  text-align: center;
+  color: maroon;
+}
+
+hr{
+  color: maroon;
+}
+
+h2{
+  text-align: center;
+  color: maroon;
+
+}
+
+p {
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    background: #faebd7;
+  }
+  
+  .label {
+    margin-left: 100px;
+    font-weight: bold;
+  }
+  
+  .create-update-form {
+    padding: 5px;
+    margin: 5px;
+    background: aqua;
+  }
+  
+  .form-group {
+    margin-bottom: 5px;
+  }
+  

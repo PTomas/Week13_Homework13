@@ -1,22 +1,22 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-    $(".change-sleep").on("click", function(event) {
+    $(".change-devoured").on("click", function(event) {
       var id = $(this).data("id");
-      var newSleep = $(this).data("newsleep");
+      var newDevoured = $(this).data("newdevoured");
   
-      var newSleepState = {
-        sleepy: newSleep
+      var newDevouredState = {
+        devoured: newDevoured
       };
   
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
-        data: newSleepState
+        data: newDevouredState
       }).then(
         function() {
-          console.log("changed sleep to", newSleep);
+          console.log("changed sleep to", newDevoured);
           // Reload the page to get the updated list
-          loburgerion.reload();
+          location.reload();
         }
       );
     });
@@ -31,7 +31,7 @@ $(function() {
         function() {
           console.log("created new burger");
           // Reload the page to get the updated list
-          loburgerion.reload();
+          location.reload();
         }
       );
     })
@@ -42,7 +42,7 @@ $(function() {
   
       var newburger = {
         name: $("#ca").val().trim(),
-        sleepy: $("[name=sleepy]:checked").val().trim()
+        devoured: $("[name=devoured]:checked").val()
       };
   
       // Send the POST request.
@@ -53,17 +53,17 @@ $(function() {
         function() {
           console.log("created new burger");
           // Reload the page to get the updated list
-          loburgerion.reload();
+          location.reload();
         }
       );
     });
   
     $(".delete-status").on("click", function(event) {
       var id = $(this).data("id");
-      var newSleep = $(this).data("deleted");
+      var newDevoured = $(this).data("deleted");
   
-      var newSleepState = {
-        sleepy: newSleep
+      var newDevouredState = {
+        devoured: newDevoured
       };
   
   });

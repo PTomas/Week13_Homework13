@@ -1,13 +1,19 @@
-<h1>Burger Time!</h1>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+</head>
+<div class="title">
+  <!--<img src="./assets/hamburger.png" alt="burger icon" class="iconImg">-->
 
-<hr>
+  <h1>Burger Time!</h1>
+</div>
+
 
 <h2>Burgers!</h2>
 
 <ul>
   {{#each burgers}}
-    {{#unless sleepy}}
-      {{> burgerBlock sleep=true}}
+    {{#unless devoured}}
+      {{> burgerBlock devoured=true}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -16,13 +22,13 @@
 
 <ul>
   {{#each burgers}}
-    {{#if sleepy}}
-      {{> burgerBlock sleep=false}}
+    {{#if devoured}}
+      {{> burgerBlock devoured=false}}
     {{/if}}
   {{/each}}
 </ul>
 
-<h2>Add a burger</h2>
+<h2 class="burgerForm">Add a burger</h2>
 <form class="create-form">
 
   <div class="form-group">
@@ -31,10 +37,11 @@
   </div>
 
   <div class="form-group">
-    <label for="slee">Devoured?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Devour it!<br>
-    <input type="radio" name="sleepy" value="0"> Not eaten
+    <label for="devoured">Devoured?</label><br>
+    <input type="radio" name="devoured" value="1" checked>Not eaten <br>
+    <input type="radio" name="devoured" value="0"> Devour it!
+    <br>
+    <button type="submit" class="addBtn">Add Burger</button>
   </div>
 
-  <button type="submit">Add Burger</button>
 </form>
